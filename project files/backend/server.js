@@ -13,9 +13,9 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .catch(err => console.error("❌ MongoDB error:", err));
 
 // Routes
-app.use("/api/auth", require("./router/auth"));
-app.use("/api/doctors", require("./router/doctors"));
-app.use("/api/appointments", require("./router/appointment"));
+app.use("/api/auth", require("./routers/auth"));
+app.use("/api/doctors", require("./routers/doctors"));
+app.use("/api/appointments", require("./routers/appointment"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
